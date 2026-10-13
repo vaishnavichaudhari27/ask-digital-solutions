@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 const INTRO_VIDEO_PATH = `${import.meta.env.BASE_URL}videos/ask-digital.mp4`
-const INTRO_AUDIO_PATH = `${import.meta.env.BASE_URL}audio/intro.mp3`
+const INTRO_AUDIO_PATH = '/audio/intro.mp3'
 const REVEAL_DURATION_MS = 650
 const LOAD_TIMEOUT_MS = 12000
 
@@ -107,9 +107,8 @@ export default function IntroVideo({ onComplete }) {
     if (!video || hasFinished.current || hasRequestedPlay.current) return
     hasRequestedPlay.current = true
     video.currentTime = 0
-    startAudio()
     video.play().catch(finishIntro)
-  }, [finishIntro, startAudio])
+  }, [finishIntro])
 
   if (!isVisible) return null
 
@@ -130,6 +129,7 @@ export default function IntroVideo({ onComplete }) {
         playsInline
         preload="auto"
         onCanPlay={playVideo}
+        onPlaying={startAudio}
         onTimeUpdate={syncAudioToVideo}
         onSeeking={syncAudioToVideo}
         onEnded={revealWebsite}
