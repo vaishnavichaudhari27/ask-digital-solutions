@@ -131,6 +131,15 @@ export default function Navbar({ onOpenQuote }) {
               About
             </NavLink>
 
+            <NavLink
+              to="/blog"
+              className={({ isActive }) => `nav-link text-sm font-medium transition-colors focus:outline-none ${
+                isActive ? 'active text-[#D9B66F] font-semibold' : 'text-[#A8AFBD] hover:text-[#D9B66F]'
+              }`}
+            >
+              Blog
+            </NavLink>
+
             {/* Services with Mega Dropdown */}
             <div 
               className="relative"
@@ -272,6 +281,16 @@ export default function Navbar({ onOpenQuote }) {
                 }`}
               >
                 About
+              </NavLink>
+
+              <NavLink
+                to="/blog"
+                onClick={() => setMobileMenuOpen(false)}
+                className={({ isActive }) => `px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                  isActive ? 'bg-[#D9B66F]/15 text-[#D9B66F] font-bold' : 'text-[#A8AFBD] hover:bg-white/[0.05] hover:text-[#D9B66F]'
+                }`}
+              >
+                Blog
               </NavLink>
 
               {/* Mobile Services Accordion */}

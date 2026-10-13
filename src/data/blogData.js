@@ -1,12 +1,16 @@
 export const BLOG_POSTS = [
   {
     id: 'pay-per-click-advertising-the-key-to-business-growth',
-    title: 'Pay-Per-Click Advertising: The Key to Business Growth',
+    title: 'Google Ads and PPC Advertising: A Practical Growth Guide',
     path: '/pay-per-click-advertising-the-key-to-business-growth',
     legacyPath: '/pay-per-click-advertising-the-key-to-business-growth.php',
-    category: 'Paid Advertising',
+    category: 'Google Ads & PPC',
     coverType: 'advertising',
-    summary: 'An overview of PPC, its benefits and campaign strategies for reaching an audience and supporting business growth.',
+    summary: 'A practical look at Google Ads, campaign targeting, budget management and performance measurement for sustainable business growth.',
+    description: 'Learn how Google Ads and pay-per-click campaigns can reach high-intent customers, control ad spend and measure business growth.',
+    date: '2026-10-08',
+    readTime: '5 min read',
+    author: 'ASK Digital Team',
     sections: [
       {
         title: 'Understanding Pay-Per-Click Advertising',
@@ -48,6 +52,10 @@ export const BLOG_POSTS = [
     category: 'E-Card',
     coverType: 'ecard',
     summary: 'How personalization, sharing, engagement and digital greetings can support a brand’s connection with its audience.',
+    description: 'Explore how personalized digital greetings can help businesses strengthen customer relationships and extend brand reach.',
+    date: '2026-09-24',
+    readTime: '4 min read',
+    author: 'ASK Digital Team',
     sections: [
       {
         title: 'The Power of Personalization',
@@ -89,6 +97,10 @@ export const BLOG_POSTS = [
     category: 'Digital Marketing',
     coverType: 'local',
     summary: 'The article explains how local businesses can meet customers online and outlines practical digital-marketing methods.',
+    description: 'Discover practical digital marketing and local SEO steps that help Pune businesses get found by nearby customers.',
+    date: '2026-09-12',
+    readTime: '6 min read',
+    author: 'ASK Digital Team',
     sections: [
       {
         title: 'What makes Internet marketing so vital for local businesses?',
@@ -115,6 +127,10 @@ export const BLOG_POSTS = [
     category: 'Website Design',
     coverType: 'web',
     summary: 'The article discusses how website design affects credibility, brand consistency and the clarity of a customer journey.',
+    description: 'See how responsive website design, clear navigation and consistent branding create a better customer experience.',
+    date: '2026-08-28',
+    readTime: '5 min read',
+    author: 'ASK Digital Team',
     sections: [
       {
         title: 'Design and Credibility',
@@ -144,6 +160,10 @@ export const BLOG_POSTS = [
     category: 'Social Media',
     coverType: 'social',
     summary: 'The article explores how social media content, social proof, promotions and influencers can affect buying decisions.',
+    description: 'Understand how useful content, customer reviews and social proof can shape audience trust and buying decisions.',
+    date: '2026-08-14',
+    readTime: '6 min read',
+    author: 'ASK Digital Team',
     sections: [
       {
         title: 'The ways in which social media marketing influences consumer behaviour',
@@ -185,6 +205,10 @@ export const BLOG_POSTS = [
     category: 'Graphic Design',
     coverType: 'design',
     summary: 'The article covers first impressions, brand consistency, communicating information, creativity, sales and trust.',
+    description: 'Learn why consistent graphic design helps businesses communicate clearly, build recognition and earn customer trust.',
+    date: '2026-07-30',
+    readTime: '5 min read',
+    author: 'ASK Digital Team',
     sections: [
       {
         title: 'First Impressions counts',
@@ -232,6 +256,10 @@ export const BLOG_POSTS = [
     category: 'Digital Marketing',
     coverType: 'digital',
     summary: 'The article describes the shift to online audiences, social media, websites and digital-marketing strategies.',
+    description: 'Build a practical digital marketing foundation with a strong website, social media, search visibility and online advertising.',
+    date: '2026-07-16',
+    readTime: '5 min read',
+    author: 'ASK Digital Team',
     sections: [
       {
         title: 'Marketing where audiences spend time online',
@@ -267,6 +295,10 @@ export const BLOG_POSTS = [
     category: 'SEO',
     coverType: 'seo',
     summary: 'An introduction to SEO, why it matters and the role of keywords, content, backlinks and technical optimization.',
+    description: 'Explore keyword research, useful content, technical SEO and backlinks that help improve organic search visibility.',
+    date: '2026-07-02',
+    readTime: '7 min read',
+    author: 'ASK Digital Team',
     sections: [
       {
         title: 'A brief overview of SEO',
@@ -293,6 +325,48 @@ export const BLOG_POSTS = [
           'Content creation supplies useful, relevant information for an audience.',
           'Quality backlink building helps establish authority through links from other websites.',
           'Technical optimization includes the components that help search engines crawl, index and understand a site, such as site maps, speed, mobile optimization and robots.txt.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'content-marketing-that-builds-trust-and-generates-leads',
+    title: 'Content Marketing That Builds Trust and Generates Leads',
+    path: '/content-marketing-that-builds-trust-and-generates-leads',
+    category: 'Content Marketing',
+    coverType: 'digital',
+    summary: 'A practical guide to planning helpful content that answers customer questions, strengthens brand trust and supports business growth.',
+    description: 'Learn how to plan helpful content, reach the right audience and turn consistent publishing into a stronger customer relationship.',
+    date: '2026-06-18',
+    readTime: '6 min read',
+    author: 'ASK Digital Team',
+    sections: [
+      {
+        title: 'Start with your audience',
+        paragraphs: [
+          'Effective content begins with a clear understanding of the people a business serves. Identify their questions, priorities and decision-making challenges before choosing topics or formats.',
+          'Customer conversations, sales enquiries and search queries can all reveal useful subjects. Addressing real questions makes content more relevant and gives each page a clear purpose.'
+        ]
+      },
+      {
+        title: 'Choose useful formats and focused topics',
+        paragraphs: [
+          'Guides, service explainers, case studies, short videos and social posts can each serve a different moment in the customer journey. Choose formats that suit the message and the channels your audience uses.',
+          'A focused editorial plan helps maintain a consistent voice and connect related articles to the products or services they support.'
+        ]
+      },
+      {
+        title: 'Make content easy to find',
+        paragraphs: [
+          'Use clear headings, descriptive page titles and natural language that reflects how customers search. Helpful internal links can guide readers to relevant services and related information.',
+          'Search optimization should support usefulness rather than replace it. Original insights and clear answers give readers a reason to stay, learn and return.'
+        ]
+      },
+      {
+        title: 'Measure, learn and improve',
+        paragraphs: [
+          'Track meaningful indicators such as qualified visits, enquiries, engagement and assisted conversions. Review performance regularly to learn which subjects and formats are useful to your audience.',
+          'Content marketing is a long-term effort. Consistent publishing, thoughtful updates and clear calls to action help turn useful information into stronger relationships and measurable business opportunities.'
         ]
       }
     ]
