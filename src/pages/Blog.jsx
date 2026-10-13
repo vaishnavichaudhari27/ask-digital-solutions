@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { motion } from 'motion/react'
 import { ArrowRight, Calendar, Clock, Sparkles } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import BlogCover from '../components/BlogCover'
 import { BLOG_POSTS } from '../data/blogData'
+import { BLOG_CARD_IMAGES } from '../data/blogCardImages'
 import { updatePageMetadata } from '../utils/pageMetadata'
 
 const BLOG_DESCRIPTION = 'Explore practical digital marketing, SEO, social media, web development, content marketing and Google Ads insights from ASK Digital Solution Pune.'
@@ -58,7 +58,7 @@ export default function Blog() {
           </motion.p>
         </header>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {BLOG_POSTS.map((post, index) => (
             <motion.article
               key={post.id}
@@ -67,17 +67,22 @@ export default function Blog() {
               transition={{ duration: 0.45, delay: Math.min(index * 0.06, 0.36) }}
               className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#101522]/90 shadow-xl transition duration-300 hover:-translate-y-1 hover:border-[#D9B66F]/40"
             >
-              <Link to={post.path} className="relative block aspect-[16/10] overflow-hidden" aria-label={`Read ${post.title}`}>
-                <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]">
-                  <BlogCover type={post.coverType} title={post.title} />
-                </div>
+              <Link to={post.path} className="relative block aspect-[16/9] overflow-hidden bg-[#101522]" aria-label={`Read ${post.title}`}>
+                <img
+                  src={BLOG_CARD_IMAGES[post.id]}
+                  alt={`${post.category} — ${post.title}`}
+                  className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
+                  loading={index < 3 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080B12]/70 via-transparent to-transparent" />
                 <span className="absolute left-4 top-4 rounded-full border border-[#D9B66F]/30 bg-[#080B12]/85 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#D9B66F] backdrop-blur">
                   {post.category}
                 </span>
               </Link>
 
-              <div className="flex flex-1 flex-col p-5 sm:p-6">
-                <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#A8AFBD]">
+              <div className="flex flex-1 flex-col p-4">
+                <div className="mb-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-[#A8AFBD]">
                   <span className="inline-flex items-center gap-1.5">
                     <Calendar className="h-3.5 w-3.5 text-[#D9B66F]" />
                     <time dateTime={post.date}>{formatDate(post.date)}</time>
@@ -87,11 +92,11 @@ export default function Blog() {
                     {post.readTime}
                   </span>
                 </div>
-                <h2 className="font-display text-xl font-semibold leading-snug text-white transition-colors group-hover:text-[#D9B66F]">
+                <h2 className="font-display text-lg font-semibold leading-snug text-white transition-colors group-hover:text-[#D9B66F]">
                   <Link to={post.path}>{post.title}</Link>
                 </h2>
-                <p className="mt-3 line-clamp-3 flex-1 text-sm leading-7 text-[#A8AFBD]">{post.summary}</p>
-                <div className="mt-5 flex items-center justify-between border-t border-white/[0.08] pt-4">
+                <p className="mt-2.5 line-clamp-2 flex-1 text-sm leading-6 text-[#A8AFBD]">{post.summary}</p>
+                <div className="mt-4 flex items-center justify-between border-t border-white/[0.08] pt-3">
                   <span className="text-xs text-white/70">{post.author}</span>
                   <Link
                     to={post.path}

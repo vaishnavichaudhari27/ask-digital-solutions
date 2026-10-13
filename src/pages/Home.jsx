@@ -4,6 +4,8 @@ import Hero from '../components/Hero'
 import aboutTeamImage from '../assets/about-team.jpg'
 import contactLaptopImage from '../assets/growth-analytics.jpg'
 import { ABOUT_DATA } from '../data/aboutData'
+import { BLOG_POSTS } from '../data/blogData'
+import { BLOG_CARD_IMAGES } from '../data/blogCardImages'
 import { COMPANY_INFO } from '../data/contactData'
 import { SERVICES_DATA } from '../data/servicesData'
 
@@ -138,6 +140,61 @@ export default function Home() {
             <span />
             <i />
             <span />
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-[#070a11] py-16 sm:py-20">
+        <div className="pointer-events-none absolute -right-28 top-0 h-80 w-80 rounded-full bg-[#b67b27]/10 blur-[130px]" />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-5 sm:mb-10">
+            <div>
+              <p className="mb-3 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#dfc27f]">
+                <Sparkles className="h-4 w-4" />
+                Insights & Ideas
+              </p>
+              <h2 className="font-display text-3xl font-bold leading-tight text-[#f3f0e9] sm:text-4xl">
+                From our <span className="text-[#dfc27f]">blog</span>
+              </h2>
+            </div>
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 border-b border-[#d9bb7c]/60 pb-2 text-sm font-semibold text-[#e6cc91] transition-colors hover:text-white"
+            >
+              Explore all articles <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {BLOG_POSTS.slice(0, 3).map((post) => (
+              <article
+                className="group overflow-hidden rounded-2xl border border-white/10 bg-[#101522]/85 transition duration-300 hover:-translate-y-1 hover:border-[#dfc27f]/40"
+                key={post.id}
+              >
+                <Link to={post.path} className="block aspect-[16/9] overflow-hidden" aria-label={`Read ${post.title}`}>
+                  <img
+                    src={BLOG_CARD_IMAGES[post.id]}
+                    alt={`${post.category} — ${post.title}`}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </Link>
+                <div className="p-5">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[#dfc27f]">{post.category}</p>
+                  <h3 className="mt-2 font-display text-lg font-semibold leading-snug text-white transition-colors group-hover:text-[#dfc27f]">
+                    <Link to={post.path}>{post.title}</Link>
+                  </h3>
+                  <p className="mt-2 line-clamp-2 text-sm leading-6 text-[#aeb5c3]">{post.summary}</p>
+                  <Link
+                    to={post.path}
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#dfc27f] transition-colors hover:text-white"
+                  >
+                    Read article <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

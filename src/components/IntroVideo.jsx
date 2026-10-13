@@ -65,13 +65,19 @@ export default function IntroVideo({ onComplete }) {
       const playAttempt = audio.play()
       playAttempt?.catch((error) => {
         audio.pause()
-        if (error.name !== 'NotAllowedError') {
+        if (error.name === 'NotAllowedError') {
+          console.info('Intro audio autoplay was blocked by the browser. Audio requires user interaction on this device.')
+        } else if (error.name !== 'AbortError') {
           console.error('Unable to play intro audio.', error)
         }
       })
     } catch (error) {
       audio.pause()
-      console.error('Unable to play intro audio.', error)
+      if (error.name === 'NotAllowedError') {
+        console.info('Intro audio autoplay was blocked by the browser. Audio requires user interaction on this device.')
+      } else {
+        console.error('Unable to play intro audio.', error)
+      }
     }
   }, [])
 
@@ -101,8 +107,8 @@ export default function IntroVideo({ onComplete }) {
     if (!video || hasFinished.current || hasRequestedPlay.current) return
     hasRequestedPlay.current = true
     video.currentTime = 0
-    video.play().catch(finishIntro)
     startAudio()
+    video.play().catch(finishIntro)
   }, [finishIntro, startAudio])
 
   if (!isVisible) return null
@@ -135,6 +141,8 @@ export default function IntroVideo({ onComplete }) {
         ref={audioRef}
         preload="auto"
         onLoadedMetadata={syncAudioToVideo}
+        onPlay={syncAudioToVideo}
+        onPlaying={syncAudioToVideo}
         onError={handleAudioError}
       >
         <source src={INTRO_AUDIO_PATH} type="audio/mpeg" />
