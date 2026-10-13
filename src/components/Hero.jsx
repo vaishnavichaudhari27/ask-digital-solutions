@@ -63,7 +63,6 @@ export default function Hero() {
               </div>
             )
           })}
-          <p className="hero-stat-signature">Your Success<br />Is Our Success</p>
         </div>
       </div>
     </section>
